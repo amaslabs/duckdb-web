@@ -24,7 +24,7 @@ title: Spatial Functions
 | [`ST_AsSVG`](#st_assvg) | Convert the geometry into a SVG fragment or path |
 | [`ST_AsText`](#st_astext) | Returns the geometry as a WKT string |
 | [`ST_AsWKB`](#st_aswkb) | Returns the geometry as a WKB (Well-Known-Binary) blob |
-| [`ST_Azimuth`](#st_azimuth) | Returns the azimuth (a clockwise angle measured from north) of two points in radian. |
+| [`ST_Azimuth`](#st_azimuth) | Returns the azimuth (a clockwise angle measured from north) of two points in radians. |
 | [`ST_Boundary`](#st_boundary) | Returns the "boundary" of a geometry |
 | [`ST_Buffer`](#st_buffer) | Returns a buffer around the input geometry at the target distance |
 | [`ST_BuildArea`](#st_buildarea) | Creates a polygonal geometry by attempting to "fill in" the input geometry. |
@@ -41,16 +41,16 @@ title: Spatial Functions
 | [`ST_CoveredBy`](#st_coveredby) | Returns true if geom1 is "covered by" geom2 |
 | [`ST_Covers`](#st_covers) | Returns true if the geom1 "covers" geom2 |
 | [`ST_Crosses`](#st_crosses) | Returns true if geom1 "crosses" geom2 |
-| [`ST_DWithin`](#st_dwithin) | Returns if two geometries are within a target distance of each-other |
-| [`ST_DWithin_GEOS`](#st_dwithin_geos) | Returns if two geometries are within a target distance of each-other |
-| [`ST_DWithin_Spheroid`](#st_dwithin_spheroid) | Returns if two POINT_2D's are within a target distance in meters, using an ellipsoidal model of the earths surface |
+| [`ST_DWithin`](#st_dwithin) | Returns if two geometries are within a target distance of each other |
+| [`ST_DWithin_GEOS`](#st_dwithin_geos) | Returns if two geometries are within a target distance of each other |
+| [`ST_DWithin_Spheroid`](#st_dwithin_spheroid) | Returns if two POINT_2D's are within a target distance in meters, using an ellipsoidal model of the earth's surface |
 | [`ST_Difference`](#st_difference) | Returns the "difference" between two geometries |
 | [`ST_Dimension`](#st_dimension) | Returns the "topological dimension" of a geometry. |
 | [`ST_Disjoint`](#st_disjoint) | Returns true if the geometries are disjoint |
 | [`ST_Distance`](#st_distance) | Returns the planar distance between two geometries |
 | [`ST_Distance_GEOS`](#st_distance_geos) | Returns the planar distance between two geometries |
 | [`ST_Distance_Sphere`](#st_distance_sphere) | Returns the haversine (great circle) distance between two geometries. |
-| [`ST_Distance_Spheroid`](#st_distance_spheroid) | Returns the distance between two geometries in meters using an ellipsoidal model of the earths surface |
+| [`ST_Distance_Spheroid`](#st_distance_spheroid) | Returns the distance between two geometries in meters using an ellipsoidal model of the earth's surface |
 | [`ST_Dump`](#st_dump) | Dumps a geometry into a list of sub-geometries and their "path" in the original geometry. |
 | [`ST_EndPoint`](#st_endpoint) | Returns the end point of a LINESTRING. |
 | [`ST_Envelope`](#st_envelope) | Returns the minimum bounding rectangle of a geometry as a polygon geometry |
@@ -113,7 +113,7 @@ title: Spatial Functions
 | [`ST_NumPoints`](#st_numpoints) | Returns the number of vertices within a geometry |
 | [`ST_Overlaps`](#st_overlaps) | Returns true if the geometries overlap |
 | [`ST_Perimeter`](#st_perimeter) | Returns the length of the perimeter of the geometry |
-| [`ST_Perimeter_Spheroid`](#st_perimeter_spheroid) | Returns the length of the perimeter in meters using an ellipsoidal model of the earths surface |
+| [`ST_Perimeter_Spheroid`](#st_perimeter_spheroid) | Returns the length of the perimeter in meters using an ellipsoidal model of the earth's surface |
 | [`ST_Point`](#st_point) | Creates a GEOMETRY point |
 | [`ST_Point2D`](#st_point2d) | Creates a POINT_2D |
 | [`ST_Point2DFromWKB`](#st_point2dfromwkb) | Deserialize a POINT_2D from a WKB encoded blob |
@@ -132,13 +132,14 @@ title: Spatial Functions
 | [`ST_Simplify`](#st_simplify) | Returns a simplified version of the geometry |
 | [`ST_SimplifyPreserveTopology`](#st_simplifypreservetopology) | Returns a simplified version of the geometry that preserves topology |
 | [`ST_StartPoint`](#st_startpoint) | Returns the start point of a LINESTRING. |
+| [`ST_SymDifference`](#st_symdifference) | Returns a geometry that represents the portions of two geometries that do not intersect |
 | [`ST_TileEnvelope`](#st_tileenvelope) | The `ST_TileEnvelope` scalar function generates tile envelope rectangular polygons from specified zoom level and tile indices. |
 | [`ST_Touches`](#st_touches) | Returns true if the geometries touch |
 | [`ST_Transform`](#st_transform) | Transforms a geometry between two coordinate systems |
 | [`ST_Union`](#st_union) | Returns the union of two geometries |
 | [`ST_VoronoiDiagram`](#st_voronoidiagram) | Returns the Voronoi diagram of the supplied MultiPoint geometry |
 | [`ST_Within`](#st_within) | Returns true if the first geometry is within the second |
-| [`ST_WithinProperly`](#st_withinproperly) | Returns true if the first geometry \"properly\" is contained by the second geometry |
+| [`ST_WithinProperly`](#st_withinproperly) | Returns true if the first geometry is \"properly\" contained by the second geometry |
 | [`ST_X`](#st_x) | Returns the X coordinate of a point geometry |
 | [`ST_XMax`](#st_xmax) | Returns the maximum X coordinate of a geometry |
 | [`ST_XMin`](#st_xmin) | Returns the minimum X coordinate of a geometry |
@@ -526,7 +527,7 @@ DOUBLE ST_Azimuth (origin POINT_2D, target POINT_2D)
 
 #### Description
 
-Returns the azimuth (a clockwise angle measured from north) of two points in radian.
+Returns the azimuth (a clockwise angle measured from north) of two points in radians.
 
 #### Example
 
@@ -889,7 +890,7 @@ BOOLEAN ST_DWithin (geom1 GEOMETRY, geom2 GEOMETRY, distance DOUBLE)
 
 #### Description
 
-Returns if two geometries are within a target distance of each-other
+Returns if two geometries are within a target distance of each other
 
 ----
 
@@ -904,7 +905,7 @@ BOOLEAN ST_DWithin_GEOS (geom1 GEOMETRY, geom2 GEOMETRY, distance DOUBLE)
 
 #### Description
 
-Returns if two geometries are within a target distance of each-other
+Returns if two geometries are within a target distance of each other
 
 ----
 
@@ -919,9 +920,9 @@ BOOLEAN ST_DWithin_Spheroid (p1 POINT_2D, p2 POINT_2D, distance DOUBLE)
 
 #### Description
 
-Returns if two POINT_2D's are within a target distance in meters, using an ellipsoidal model of the earths surface
+Returns if two POINT_2D's are within a target distance in meters, using an ellipsoidal model of the earth's surface
 
-The input geometry is assumed to be in the [EPSG:4326](https://en.wikipedia.org/wiki/World_Geodetic_System) coordinate system (WGS84), with [latitude, longitude] axis order and the distance is returned in meters. This function uses the [GeographicLib](https://geographiclib.sourceforge.io/) library to solve the [inverse geodesic problem](https://en.wikipedia.org/wiki/Geodesics_on_an_ellipsoid#Solution_of_the_direct_and_inverse_problems), calculating the distance between two points using an ellipsoidal model of the earth. This is a highly accurate method for calculating the distance between two arbitrary points taking the curvature of the earths surface into account, but is also the slowest.
+The input geometry is assumed to be in the [EPSG:4326](https://en.wikipedia.org/wiki/World_Geodetic_System) coordinate system (WGS84), with [latitude, longitude] axis order and the distance is returned in meters. This function uses the [GeographicLib](https://geographiclib.sourceforge.io/) library to solve the [inverse geodesic problem](https://en.wikipedia.org/wiki/Geodesics_on_an_ellipsoid#Solution_of_the_direct_and_inverse_problems), calculating the distance between two points using an ellipsoidal model of the earth. This is a highly accurate method for calculating the distance between two arbitrary points taking the curvature of the earth's surface into account, but is also the slowest.
 
 ----
 
@@ -1060,9 +1061,9 @@ DOUBLE ST_Distance_Spheroid (p1 POINT_2D, p2 POINT_2D)
 
 #### Description
 
-Returns the distance between two geometries in meters using an ellipsoidal model of the earths surface
+Returns the distance between two geometries in meters using an ellipsoidal model of the earth's surface
 
-The input geometry is assumed to be in the [EPSG:4326](https://en.wikipedia.org/wiki/World_Geodetic_System) coordinate system (WGS84), with [latitude, longitude] axis order and the distance limit is expected to be in meters. This function uses the [GeographicLib](https://geographiclib.sourceforge.io/) library to solve the [inverse geodesic problem](https://en.wikipedia.org/wiki/Geodesics_on_an_ellipsoid#Solution_of_the_direct_and_inverse_problems), calculating the distance between two points using an ellipsoidal model of the earth. This is a highly accurate method for calculating the distance between two arbitrary points taking the curvature of the earths surface into account, but is also the slowest.
+The input geometry is assumed to be in the [EPSG:4326](https://en.wikipedia.org/wiki/World_Geodetic_System) coordinate system (WGS84), with [latitude, longitude] axis order and the distance limit is expected to be in meters. This function uses the [GeographicLib](https://geographiclib.sourceforge.io/) library to solve the [inverse geodesic problem](https://en.wikipedia.org/wiki/Geodesics_on_an_ellipsoid#Solution_of_the_direct_and_inverse_problems), calculating the distance between two points using an ellipsoidal model of the earth. This is a highly accurate method for calculating the distance between two arbitrary points taking the curvature of the earth's surface into account, but is also the slowest.
 
 #### Example
 
@@ -1523,7 +1524,7 @@ UINTEGER ST_Hilbert (box BOX_2DF, bounds BOX_2DF)
 
 Encodes the X and Y values as the hilbert curve index for a curve covering the given bounding box.
 If a geometry is provided, the center of the approximate bounding box is used as the point to encode.
-If no bounding box is provided, the hilbert curve index is mapped to the full range of a single-presicion float.
+If no bounding box is provided, the hilbert curve index is mapped to the full range of a single-precision float.
 For the BOX_2D and BOX_2DF variants, the center of the box is used as the point to encode.
 
 ----
@@ -1983,7 +1984,7 @@ POINT_4D ST_MakePoint (x DOUBLE, y DOUBLE, z DOUBLE, m DOUBLE)
 
 #### Description
 
-Creates a GEOMETRY point from an pair of floating point numbers.
+Creates a GEOMETRY point from a pair of floating point numbers.
 
 For geodetic coordinate systems, x is typically the longitude value and y is the latitude value.
 
@@ -2126,7 +2127,7 @@ INTEGER ST_NGeometries (geom GEOMETRY)
 #### Description
 
 Returns the number of component geometries in a collection geometry.
-If the input geometry is not a collection, this function returns 0 or 1 depending on if the geometry is empty or not.
+If the input geometry is not a collection, this function returns 0 or 1 depending on whether the geometry is empty or not.
 
 ----
 
@@ -2301,7 +2302,7 @@ DOUBLE ST_Perimeter_Spheroid (poly POLYGON_2D)
 
 #### Description
 
-Returns the length of the perimeter in meters using an ellipsoidal model of the earths surface
+Returns the length of the perimeter in meters using an ellipsoidal model of the earth's surface
 
 The input geometry is assumed to be in the [EPSG:4326](https://en.wikipedia.org/wiki/World_Geodetic_System) coordinate system (WGS84), with [latitude, longitude] axis order and the length is returned in meters. This function uses the [GeographicLib](https://geographiclib.sourceforge.io/) library, calculating the perimeter using an ellipsoidal model of the earth. This is a highly accurate method for calculating the perimeter of a polygon taking the curvature of the earth into account, but is also the slowest.
 
@@ -2623,6 +2624,21 @@ Returns the start point of a LINESTRING.
 
 ----
 
+### ST_SymDifference
+
+
+#### Signatures
+
+```sql
+GEOMETRY ST_SymDifference(geom1 GEOMETRY, geom2 GEOMETRY)
+```
+
+#### Description
+
+Returns a geometry that represents the portions of geom1 and geom2 that do not intersect.
+
+----
+
 ### ST_TileEnvelope
 
 
@@ -2814,7 +2830,7 @@ BOOLEAN ST_WithinProperly (geom1 GEOMETRY, geom2 GEOMETRY)
 
 #### Description
 
-Returns true if the first geometry \"properly\" is contained by the second geometry
+Returns true if the first geometry is \"properly\" contained by the second geometry
 
 This function functions the same as `ST_ContainsProperly`, but the arguments are swapped.
 
@@ -3257,7 +3273,7 @@ GEOMETRY ST_MemUnion_Agg (col0 GEOMETRY)
 #### Description
 
 Computes the union of a set of input geometries.
-                "Slower, but might be more memory efficient than ST_UnionAgg as each geometry is merged into the union individually rather than all at once.
+                Slower, but might be more memory efficient than ST_Union_Agg as each geometry is merged into the union individually rather than all at once.
 
 ----
 
@@ -3429,7 +3445,7 @@ Returns the list of supported GDAL drivers and file formats
 
 Note that far from all of these drivers have been tested properly.
 Some may require additional options to be passed to work as expected.
-If you run into any issues please first consult the [consult the GDAL docs](https://gdal.org/drivers/vector/index.html).
+If you run into any issues please first consult the [GDAL docs](https://gdal.org/drivers/vector/index.html).
 
 #### Example
 
@@ -3596,7 +3612,7 @@ Since the data model of the underlying GDAL library is quite flexible, most of t
 #### Example
 
 ```sql
--- Find the coordinate reference system authority name and code for the first layers first geometry column in the file
+-- Find the coordinate reference system authority name and code for the layers first geometry column in the file
 SELECT
     layers[1].geometry_fields[1].crs.auth_name as name,
     layers[1].geometry_fields[1].crs.auth_code as code
